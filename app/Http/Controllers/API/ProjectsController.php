@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use App\Repositories\ProjectRepository;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,6 +20,11 @@ class ProjectsController extends Controller
         $this->projectRepository = $projectRepository;
     }
 
+    /**
+     * @return JsonResponse
+     * Get All projects
+     */
+
     public function index()
     {
         return response()->json([
@@ -28,6 +34,12 @@ class ProjectsController extends Controller
         ]);
     }
 
+
+    /**
+     * @param $id
+     * @return JsonResponse
+     * Show a project details
+     */
 
     public function show($id)
     {
@@ -50,6 +62,12 @@ class ProjectsController extends Controller
         ]);
     }
 
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     * Store a project in database
+     */
 
     public function store(Request $request)
     {
@@ -80,6 +98,13 @@ class ProjectsController extends Controller
 
     }
 
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     * Update a project by project id
+     */
 
     public function update(Request $request, $id)
     {
@@ -119,6 +144,12 @@ class ProjectsController extends Controller
 
     }
 
+
+    /**
+     * @param $id
+     * @return JsonResponse
+     * Delete a project from database
+     */
 
     public function destroy($id)
     {
