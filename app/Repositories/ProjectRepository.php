@@ -19,7 +19,7 @@ class ProjectRepository implements CrudInterface
 
     public function findById($id)
     {
-        return Project::find($id);
+        return Project::with('tasks')->find($id);
     }
 
     /**

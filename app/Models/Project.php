@@ -44,4 +44,12 @@ class Project extends Model
      * @var int|mixed
      */
     private $user_id;
+
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+
 }

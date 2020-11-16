@@ -14,15 +14,13 @@ class TaskRepository implements CrudInterface
 
     public function getAll()
     {
-        $tasks = Task::all();
-        return $tasks;
+        return Task::all();
     }
 
     public function findById($id)
     {
-        $task = Task::with('project')
+        return Task::with('project')
             ->find($id);
-        return $task;
     }
 
     public function create(Request $request)

@@ -124,7 +124,7 @@ class TasksController extends Controller
             ]);
         }
 
-        $Task = $this->TaskRepository->edit($request, $id);
+        $Task = $this->TaskRepository->update($request, $id);
         return response()->json([
             'success' => true,
             'message' => 'Task Updated',
