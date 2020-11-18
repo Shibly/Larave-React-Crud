@@ -28,7 +28,7 @@ class ProjectsController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Projects',
-            'projects' => $this->projectRepository->getAll()
+            'data' => $this->projectRepository->getAll()
         ]);
     }
 

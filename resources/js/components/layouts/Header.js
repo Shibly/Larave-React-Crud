@@ -3,7 +3,7 @@ import {Container, NavDropdown, Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    const [publicURL, setPublicURL] = useState("/myTask/");
+    const [publicURL, setPublicURL] = useState("/laravel/myTask/");
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
@@ -16,6 +16,9 @@ const Header = () => {
                     <Nav className="mr-auto">
                         <Link to={`${publicURL}`}>
                             <Nav.Item className="text-white mr-2 ">Home</Nav.Item>
+                        </Link>
+                        <Link to={`${publicURL}projects`}>
+                            <Nav.Item className="text-white mr-2 ">Projects</Nav.Item>
                         </Link>
                         <Link to={`${publicURL}about`}>
                             <Nav.Item className="text-white mr-2 ">About</Nav.Item>
